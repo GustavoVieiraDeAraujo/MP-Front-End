@@ -1,9 +1,18 @@
 import React from "react";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+import { Container} from "./styles";
 
 export function Login() {
     return (
-        <><Header /><h1>Page Login </h1><Footer /></>
+        <Container>
+            <h1>Login</h1>
+            <p>Email</p>
+            <Input/>
+            <p>Senha-</p>
+            <Input/>
+            <Button> Entrar</Button>
+            <p>Cadastre-se</p>
+        </Container>
     )
 }
