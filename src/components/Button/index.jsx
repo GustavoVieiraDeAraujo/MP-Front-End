@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import React from "react";
 import { Container } from "./styles"
 
-function Button({url, children, ...props}) {
+
+const Button = ({url, children, ...props}) => {
     return(
         <>
-        { url ?
+        { !!url ?
         <Link to={url}>
         <Container {...props}>
             {children}
