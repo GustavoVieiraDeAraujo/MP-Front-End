@@ -13,4 +13,8 @@
     /* colors */
     --clr-primary: #000000;
     --clr-secondary: #D9D9D9;
+    /* sizes */
+    --page-title-size: 96px;
+    --title-size:24px;
+
   }
