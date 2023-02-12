@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 .checkbox__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 input[type=checkbox] {
@@ -22,5 +22,6 @@ input[type=checkbox] {
 .checkboxAndUser {
     display: flex;
     flex-direction: row;
+    margin-right: 25px;
 }
 `

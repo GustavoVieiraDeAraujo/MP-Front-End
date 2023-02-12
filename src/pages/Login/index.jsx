@@ -15,7 +15,7 @@ export function Login() {
             <p>Senha</p>
             <Input/>
             <Button> Entrar</Button>
-            <Button url={"/Cadastro"}>Cadastre-se</Button>
+            <Button url={"/Register"}>Cadastre-se</Button>
             <Navbar/>
         </Container>
     )
