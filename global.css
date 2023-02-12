@@ -7,14 +7,20 @@
     justify-content: center;
     font-family: 'Inter', sans-serif;
     margin:0;
-    padding:0;
+    padding:10vh;
+  }
+  h1{
+    font-size: var(--page-title-size);
+  }
+  p{
+      font-size: var(--title-size);
   }
 :root{
     /* colors */
     --clr-primary: #000000;
     --clr-secondary: #D9D9D9;
     /* sizes */
-    --page-title-size: 96px;
+    --page-title-size: 86px;
     --title-size:24px;
 
   }
