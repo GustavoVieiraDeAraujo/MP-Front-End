@@ -8,4 +8,19 @@ export const Container = styled.div`
     flex-direction:column;
     height:100vh;
     color:black;
+
+.checkbox__container {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=checkbox] {
+    width: 3vh;
+    height: 3vh;
+}
+
+.checkboxAndUser {
+    display: flex;
+    flex-direction: row;
+}
 `
