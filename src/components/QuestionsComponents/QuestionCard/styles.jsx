@@ -6,6 +6,6 @@ height: 100px;
 display:flex;
 justify-content: space-around;
 align-items: center;
-background-color: var(--clr-secondary);
+background-color: var(--clr-bg);
 cursor:pointer;
 `

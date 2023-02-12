@@ -1,10 +1,9 @@
-
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height:10px;
+    height:40px;
     padding:20px;
-    width:10vw;
+    width:12vw;
     font-family: inherit;
     font-size:18px;
     border-radius:5px;
@@ -12,8 +11,8 @@ export const Container = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    margin:10px;
-    color: var(--clr-primary);
-    background-color: var(--clr-secondary);
+    margin:30px;
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
     cursor: pointer;
 `

@@ -4,7 +4,7 @@ import QuestionsContainer from "../../components/QuestionsComponents/QuestionsCo
 import { Container} from "./styles";
 
 
-export function Questoes() {
+export function Questions() {
 
     return (
         <Container>
