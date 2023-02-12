@@ -19,6 +19,8 @@ export function Cadastro() {
     return (
         <Container>
             <h1>Criar conta</h1>
+            <p>Nome</p>
+            <Input/>
             <p>Email</p>
             <Input/>
             <p>Senha</p>
