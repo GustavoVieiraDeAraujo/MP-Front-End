@@ -36,6 +36,7 @@ export function Cadastro() {
                 </div>
             </div>
             <Button> Cadastrar </Button>
+            <Button url="/"> Voltar à página de Login </Button>
         </Container>
     )
 }
