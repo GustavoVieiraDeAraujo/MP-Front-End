@@ -1,10 +1,11 @@
+import {HiTrash} from 'react-icons/hi'
+import {FiEdit} from 'react-icons/fi'
 import Button from '../../Button/index.jsx'
 import RoundButton from '../../RoundButton/index.jsx'
 import QuestionCard from '../QuestionCard/index.jsx'
 import {Container} from './styles.jsx'
-import {HiTrash} from 'react-icons/hi'
-import {FiEdit} from 'react-icons/fi'
-const QuestionContainer =  ({user,questions,...props}) =>{
+
+function QuestionContainer({user,questions,...props}) {
     if(user.is_teacher === true){
         const user_id = user?.id
     }
@@ -19,13 +20,14 @@ const QuestionContainer =  ({user,questions,...props}) =>{
     //         }).catch(err => toast.error(err.response.data? err.response.data.message : 'Algum erro ocorreu. Por favor, tente novamente.'))
     //     }
     // }
-    console.log([user.is_teacher,user.is_admin,user.is_student])
     return (
             <Container user={user.is_teacher}>
                 {(user.is_teacher === true)
                 ?
+                <>
                 <div className='questions__container'>
-                {questions.filter(((item) => item.user.id === user.id)).map((item, index) =>(
+                {console.log(user.id)}
+                {questions.filter(((item) => {return item.user_id === user.id})).map((item, index) =>{return (
                     <div className='question__content'>
                         <QuestionCard key={index} title={item.title} subject={item.subject} OnClick/>
                         <div className='admin__buttons'>
@@ -33,15 +35,17 @@ const QuestionContainer =  ({user,questions,...props}) =>{
                                 <RoundButton className='round__button' type="button" onClick={() => {deletePartner(item.id)}}><HiTrash /></RoundButton>
                         </div>
                     </div>
-                ))}  
+                )})}  
                 </div>
+                <Button  className='button' url="/QuestionCreate" >Adicionar Questão</Button>
+                </>
                 :
                 <div className='questions__container'>
-                    {questions.map((item,index)=>(
+                    {questions.map((item,index)=>{return (
                         <div className='question__content'>
                             <QuestionCard key={index} title={item.title} subject={item.subject} />
                         </div> 
-                    ))}
+                    )})}
                 </div>
                 }
             </Container>

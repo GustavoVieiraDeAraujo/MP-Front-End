@@ -1,6 +1,6 @@
 import {Container} from './styles.jsx'
 
-const QuestionCard =  ({title,subject}) =>{
+function QuestionCard({title,subject}) {
 
     return(
         <Container>

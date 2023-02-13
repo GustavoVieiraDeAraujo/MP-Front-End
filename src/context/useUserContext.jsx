@@ -1,22 +1,22 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import Cookie from "js-cookie"
-import {api} from "../services/api"
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import {api} from "../services/api"
 
 const UserContext = createContext({});
 
-const UserProvider = ({children}) => {
+function UserProvider({children}) {
     const [user, setUser] = useState({});
-    let navigate = useNavigate()
+    const navigate = useNavigate()
     const login = async (email, password) => {
         try{
             const response = await api.get('/user/login', {params: {email, password}})
             
             if(response.data){
                 setUser(response.data)
-                api.defaults.headers.common["X-Admin-Token"] = response.data.authentication_token
-                api.defaults.headers.common["X-Admin-Email"] = response.data.email
+                api.defaults.headers.common["X-User-Token"] = response.data.authentication_token
+                api.defaults.headers.common["X-User-Email"] = response.data.email
                 Cookie.set('mp.user', JSON.stringify(response.data), {expires: 1})
                 window.alert("Usuário logado com sucesso!")
                 navigate("/minhaconta")
@@ -30,10 +30,10 @@ const UserProvider = ({children}) => {
     useEffect(() => {
         const retrievedUser = Cookie.get('mp.user');
         if(retrievedUser){
-            let parsedUser = JSON.parse(retrievedUser)
+            const parsedUser = JSON.parse(retrievedUser)
             setUser(parsedUser)
-            api.defaults.headers.common["X-Admin-Token"] = parsedUser.authentication_token
-            api.defaults.headers.common["X-Admin-Email"] = parsedUser.email
+            api.defaults.headers.common["X-User-Token"] = parsedUser.authentication_token
+            api.defaults.headers.common["X-User-Email"] = parsedUser.email
         }
     }, [])
 

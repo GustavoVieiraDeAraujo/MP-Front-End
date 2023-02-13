@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Container } from "./styles"
 
 
-const RoundButton = ({url, children, ...props}) => {
+function RoundButton({url, children, ...props}) {
     return(
         <>
-        { !!url ?
+        { url ?
         <Link to={url}>
         <Container {...props}>
             {children}

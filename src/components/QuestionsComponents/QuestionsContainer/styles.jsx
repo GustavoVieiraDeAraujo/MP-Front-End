@@ -19,6 +19,6 @@ width: 100%;
     align-items: center;
 }
 /* .button {
-    display: ${(props)=> props.user? 'flex' : 'none'};
+    display: ${(props)=> {return props.user? 'flex' : 'none'}};
 } */
 `

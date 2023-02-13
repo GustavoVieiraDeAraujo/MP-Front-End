@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import {Navbar} from "../../components/Navbar";
 import QuestionsContainer from "../../components/QuestionsComponents/QuestionsContainer";
 import { useUserContext } from "../../context/useUserContext";
@@ -12,7 +12,7 @@ export function Questions() {
 
     useEffect(()=>{
         api.get('/question/index')
-        .then(response => {console.log(response.data);setQuestions(response.data)})
+        .then(response => setQuestions(response.data))
     },[])
 
     return (
