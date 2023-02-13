@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import Cookie from "js-cookie"
-import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import {api} from "../services/api"
 

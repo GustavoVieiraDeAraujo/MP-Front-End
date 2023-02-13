@@ -23,11 +23,11 @@ function QuestionContainer({user,questions,...props}) {
     return (
             <Container user={user.is_teacher}>
                 {(user.is_teacher === true)
-                ?
+                ? 
                 <>
                 <div className='questions__container'>
                 {console.log(user.id)}
-                {questions.filter(((item) => {return item.user_id === user.id})).map((item, index) =>{return (
+                {questions.filter(((item) => {return item.owner.id === user.id})).map((item, index) =>{return (
                     <div className='question__content'>
                         <QuestionCard key={index} title={item.title} subject={item.subject} OnClick/>
                         <div className='admin__buttons'>

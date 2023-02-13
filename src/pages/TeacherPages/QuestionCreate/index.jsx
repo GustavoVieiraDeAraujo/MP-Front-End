@@ -16,19 +16,25 @@ export function QuestionCreate() {
     const [subject, setSubject] = useState('')
     const [answer, setAnswer] = useState('')
     const [user_id, setUserId] = useState(`${user.id}`)
+    console.log(user)
 
     const questionCreate = async (e) => {
         e.preventDefault()
         if (title && description && subject && answer && user_id) {
-            const response = await api.post('question/create', {
-                    title,
-                    description,
-                    subject,
-                    answer,
-                    user_id
-            })
-            if (response.data){
-                navigate("/questoes")
+            try {
+                const response = await api.post('question/create', {
+                        title,
+                        description,
+                        subject,
+                        answer,
+                        user_id
+                })
+                if (response.data){
+                    console.log(response.data)
+                    navigate("/questoes")
+                }}
+            catch (err) {
+                window.alert('Algum erro ocorreu. Por favor, tente novamente.')
             }
         } else {
                 window.alert("prencher todos os campos")
