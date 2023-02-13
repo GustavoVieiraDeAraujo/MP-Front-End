@@ -1,8 +1,11 @@
 import React from "react";
 import { Container } from "./styles";
+import { useUserContext } from "../../context/useUserContext";
+import {AiOutlineLogin} from 'react-icons/ai'
 // import {Container} from './styles'
 
 export function Navbar() {
+    const {user, logout} = useUserContext()
 
     return(
         <Container>
@@ -21,6 +24,7 @@ export function Navbar() {
                     <b><a href="/minhaconta" className="navbar__link">MINHA CONTA</a></b>
                     </li>
                 </ul>
+                { Object.keys(user).length ? <div onClick={() => logout()}><AiOutlineLogin className='logout_icon'/></div>:<></>}
             </nav>
         </Container>
     )
