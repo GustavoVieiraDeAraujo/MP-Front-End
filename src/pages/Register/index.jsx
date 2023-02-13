@@ -22,8 +22,10 @@ export function Register() {
 
     const userCreate = async (e) => {
         e.preventDefault()
-        if (name && email && password && enrollment && formValues.radioUser) {
-            const response = await api.post("user/create",{
+        console.log(name , email , enrollment, password , formValues.radioUser === 'teacher', formValues.radioUser === 'student', false)
+        if (name && email && enrollment && password && formValues.radioUser) {
+            await api.post("user/create",{
+                "user": {
                 name,
                 email,
                 enrollment,
@@ -31,7 +33,7 @@ export function Register() {
                 is_teacher: formValues.radioUser === 'teacher',
                 is_student: formValues.radioUser === 'student',
                 is_admin: false
-            })
+        }})
                 navigate('/')
                 alert("Sucesso")
             }else{

@@ -21,12 +21,13 @@ export function QuestionCreate() {
         if (title && description && subject && answer && user_id) {
             try {
                 const response = await api.post('question/create', {
+                    "question": {
                         title,
                         description,
                         subject,
                         answer,
                         user_id
-                })
+            }})
                 if (response.data){
                     navigate("/questoes")
                 }}

@@ -6,8 +6,10 @@ import {api} from "../services/api"
 const UserContext = createContext({});
 
 function UserProvider({children}) {
+    
     const [user, setUser] = useState({});
     const navigate = useNavigate()
+
     const login = async (email, password) => {
         try{
             const response = await api.get('/user/login', {params: {email, password}})
