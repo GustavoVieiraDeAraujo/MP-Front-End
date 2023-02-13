@@ -4,8 +4,10 @@ function QuestionCard({title,subject}) {
 
     return(
         <Container>
+
                 <p>{title}</p>
                 <p>{subject}</p>
+
         </Container>
     )
 }
