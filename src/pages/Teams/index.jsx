@@ -1,25 +1,26 @@
 import React, {  useEffect, useState } from "react";
 import {Navbar} from "../../components/Navbar";
 import QuestionsContainer from "../../components/QuestionsComponents/QuestionsContainer";
+import TeamsContainer from "../../components/TeamsComponents/TeamContainer";
 import { useUserContext } from "../../context/useUserContext";
 import { api } from "../../services/api";
 import { Container} from "./styles";
 
 
-export function Questions() {
-    const [questions, setQuestions] = useState([])
+export function Teams() {
+    const [Teams, setTeams] = useState([])
     const {user} = useUserContext()
 
     useEffect(()=>{
-        api.get('/question/index')
-        .then(response => {return setQuestions(response.data)})
+        api.get('/team/index')
+        .then(response => setTeams(response.data))
     },[])
 
     return (
         <Container>
             <Navbar/>
-            <h1>Suas Questões</h1>
-            <QuestionsContainer user={user} questions={questions} setQuestions = {setQuestions}/>
+            <h1>Suas Turmas</h1>
+            <TeamsContainer user={user} teams={Teams} setTeams = {setTeams}/>
         </Container>
     )
 }

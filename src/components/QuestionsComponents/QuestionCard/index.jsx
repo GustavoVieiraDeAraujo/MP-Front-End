@@ -7,7 +7,6 @@ function QuestionCard({title,subject}) {
         <Container>
             <p>{title}</p>
             <p>{subject}</p>
-
         </Container>
     )
 }

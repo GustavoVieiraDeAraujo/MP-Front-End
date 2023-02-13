@@ -5,6 +5,8 @@ import { Login } from "./pages/Login";
 import { Questions } from "./pages/Questions";
 import { QuestionCreate } from "./pages/TeacherPages/QuestionCreate";
 import { Register } from "./pages/Register"
+import { Teams } from "./pages/Teams";
+import { Quiz } from "./pages/Quizzes";
 
 
 export function App() {
@@ -15,8 +17,8 @@ export function App() {
             <Route path="/" element={<Login/>}/>
             <Route path="/questoes" element={<Questions/>}/>
             <Route path="/Register" element={<Register/>}/>
-            <Route path="/turmas" element={<Login/>}/>
-            <Route path="/provas" element={<Login/>}/>
+            <Route path="/turmas" element={<Teams/>}/>
+            <Route path="/provas" element={<Quiz/>}/>
             <Route path="/minhaconta" element={<Login/>}/>
             <Route path="/TeamCreate" element={<Login/>}/>
             <Route path="/TeamUpdate" element={<Login/>}/>
