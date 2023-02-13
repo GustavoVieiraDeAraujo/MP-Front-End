@@ -8,7 +8,7 @@ flex-direction: column;
 width: 100%;
 cursor:pointer;
 
-.teams__container{
+.quiz__container{
     display:flex;
     justify-content: space-around;
     align-items: center;

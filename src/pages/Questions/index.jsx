@@ -20,7 +20,6 @@ export function Questions() {
             <Navbar/>
             <h1>Suas Questões</h1>
             <QuestionsContainer user={user} questions={questions} setQuestions = {setQuestions}/>
-            {/* <QuestionsContainer  questions={questions} setQuestions = {setQuestions}/> */}
         </Container>
     )
 }

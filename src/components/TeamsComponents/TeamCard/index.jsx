@@ -1,15 +1,14 @@
 import {Container} from './styles.jsx'
 
-function QuestionCard({title,subject}) {
+function TeamCard({name}) {
 
     return(
         <Container>
-
-                <p>{title}</p>
-                <p>{subject}</p>
-
+            <div className='team__content'>
+                <p>{name}</p>
+            </div>
         </Container>
     )
 }
 
-export default QuestionCard
+export default TeamCard
