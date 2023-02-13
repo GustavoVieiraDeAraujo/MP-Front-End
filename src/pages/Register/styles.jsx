@@ -9,6 +9,18 @@ export const Container = styled.div`
     height:100vh;
     color:black;
 
+h1{
+    font-size: var(--page-title-size);
+}
+
+p{
+    font-size: var(--title-size);
+}
+
+.title{
+    margin-top: 150px;
+}
+
 .checkbox__container {
     display: flex;
     flex-direction: row;

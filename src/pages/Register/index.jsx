@@ -41,7 +41,7 @@ export function Register() {
 
     return (
         <Container>
-            <h1>Criar conta</h1>
+            <h1 className="title">Criar conta</h1>
             <form>
                 <Input type='text' placeholder='Nome do usuário' onChangeFunction={setName} />
                 <Input type='text' placeholder='E-mail do usuário' onChangeFunction={setEmail} />
