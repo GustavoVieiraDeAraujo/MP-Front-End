@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import {Navbar} from "../../components/Navbar";
 import { Container} from "./styles";
 import { useUserContext } from "../../context/useUserContext";
-import { Link } from "react-router-dom";
 
 
 export function Login() {
@@ -20,7 +20,7 @@ export function Login() {
             <Input onChangeFunction={setEmail} placeholder="Email"/>
             <p>Senha</p>
             <Input onChangeFunction={setPassword} placeholder="Password" type="password"/>
-            <Button onClick={() => login(email, password)}>Entrar</Button>
+            <Button onClick={() => {return login(email, password)}}>Entrar</Button>
             <Button url="/Register">Cadastre-se</Button>
             <Navbar/>
         </Container>
