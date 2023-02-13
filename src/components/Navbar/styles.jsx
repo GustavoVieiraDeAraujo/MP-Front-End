@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-color: var(--clr-primary);
-background-color: var(--clr-secondary);
+color: var(--clr-text);
+background-color: var(--clr-bg);
 width:100vw;
 position: fixed;
 height: 60px;

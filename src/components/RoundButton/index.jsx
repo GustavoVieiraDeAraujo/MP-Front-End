@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import { Container } from "./styles"
 
 
-function Button({url, children, ...props}) {
+function RoundButton({url, children, ...props}) {
     return(
         <>
-        { !!url ?
-        <Link to={url} style={{textDecoration: "none", textAlign: "center"}}>
-
+        { url ?
+        <Link to={url}>
         <Container {...props}>
             {children}
         </Container>
@@ -20,4 +19,4 @@ function Button({url, children, ...props}) {
     )
 }
 
-export default Button
+export default RoundButton
