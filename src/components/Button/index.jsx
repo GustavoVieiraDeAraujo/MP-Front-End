@@ -5,8 +5,9 @@ import { Container } from "./styles"
 function Button({url, children, ...props}) {
     return(
         <>
-        { url ?
-        <Link to={url}>
+        { !!url ?
+        <Link to={url} style={{textDecoration: "none", textAlign: "center"}}>
+
         <Container {...props}>
             {children}
         </Container>

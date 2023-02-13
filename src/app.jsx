@@ -4,6 +4,8 @@ import { UserProvider } from "./context/useUserContext";
 import { Login } from "./pages/Login";
 import { Questions } from "./pages/Questions";
 import { QuestionCreate } from "./pages/TeacherPages/QuestionCreate";
+import { Register } from "./pages/Register"
+
 
 export function App() {
   return (
@@ -12,6 +14,7 @@ export function App() {
         <Routes>
             <Route path="/" element={<Login/>}/>
             <Route path="/questoes" element={<Questions/>}/>
+            <Route path="/Register" element={<Register/>}/>
             <Route path="/turmas" element={<Login/>}/>
             <Route path="/provas" element={<Login/>}/>
             <Route path="/minhaconta" element={<Login/>}/>
