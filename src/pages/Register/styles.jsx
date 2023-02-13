@@ -12,9 +12,10 @@ export const Container = styled.div`
 .checkbox__container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
-input[type=checkbox] {
+input[type=radio] {
     width: 3vh;
     height: 3vh;
 }
@@ -23,5 +24,16 @@ input[type=checkbox] {
     display: flex;
     flex-direction: row;
     margin-right: 25px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label{
+    margin-top: 20px;
 }
 `
