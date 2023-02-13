@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { Container } from "./styles";
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 import { api } from "../../services/api";
 
 export function Register() {
@@ -14,7 +13,7 @@ export function Register() {
     const [enrollment, setEnrollment] = useState('')
     const [formValues, setFormValues] = useState({})
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -23,15 +22,14 @@ export function Register() {
 
     const userCreate = async (e) => {
         e.preventDefault()
-        console.log(name,email,password,enrollment,formValues.radioUser)
         if (name && email && password && enrollment && formValues.radioUser) {
             const response = await api.post("user/create",{
                 name,
                 email,
                 enrollment,
                 password,
-                is_teacher: 'teacher' === formValues.radioUser,
-                is_student: 'student' === formValues.radioUser,
+                is_teacher: formValues.radioUser === 'teacher',
+                is_student: formValues.radioUser === 'student',
                 is_admin: false
             })
                 navigate('/')
@@ -45,30 +43,30 @@ export function Register() {
         <Container>
             <h1>Criar conta</h1>
             <form>
-                <Input type='text' placeholder='Nome do usuário' onChangeFunction={setName}></Input>
-                <Input type='text' placeholder='E-mail do usuário' onChangeFunction={setEmail}></Input>
-                <Input type='text' placeholder='Matrícula do usuário' onChangeFunction={setEnrollment}></Input>
-                <Input type='password' placeholder='Senha' onChangeFunction={setPassword} ></Input>
+                <Input type='text' placeholder='Nome do usuário' onChangeFunction={setName} />
+                <Input type='text' placeholder='E-mail do usuário' onChangeFunction={setEmail} />
+                <Input type='text' placeholder='Matrícula do usuário' onChangeFunction={setEnrollment} />
+                <Input type='password' placeholder='Senha' onChangeFunction={setPassword}  />
                 <div className="checkbox__container">
                     <div className="checkboxAndUser">
                     <Input 
-                        id = {"checkboxStudent"}
-                        type={"radio"} 
-                        name={"radioUser"}
+                        id = "checkboxStudent"
+                        type="radio" 
+                        name="radioUser"
                         onChange={handleInputChange} 
-                        value={'student'} 
+                        value="student" 
                     />
-                        <label for="checkboxStudent">Aluno</label>
+                        <label htmlFor="checkboxStudent">Aluno</label>
                     </div>
                     <div className="checkboxAndUser">
                     <Input 
-                        id = {"checkboxTeacher"}
-                        type={"radio"} 
-                        name={"radioUser"}
+                        id = "checkboxTeacher"
+                        type="radio" 
+                        name="radioUser"
                         onChange={handleInputChange} 
-                        value={'teacher'} 
+                        value="teacher" 
                     />
-                        <label for="checkboxTeacher">Professor</label>
+                        <label htmlFor="checkboxTeacher">Professor</label>
                     </div>
                 </div>
                 <Button onClick={userCreate}> Cadastrar </Button>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "./styles"
 
@@ -5,7 +6,7 @@ import { Container } from "./styles"
 function Button({url, children, ...props}) {
     return(
         <>
-        { !!url ?
+        { url ?
         <Link to={url} style={{textDecoration: "none", textAlign: "center"}}>
 
         <Container {...props}>
