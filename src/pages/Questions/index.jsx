@@ -12,7 +12,7 @@ export function Questions() {
 
     useEffect(()=>{
         api.get('/question/index')
-        .then(response => setQuestions(response.data))
+        .then(response => {return setQuestions(response.data)})
     },[])
 
     return (
