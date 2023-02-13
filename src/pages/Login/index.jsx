@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import {Navbar} from "../../components/Navbar";
 import { Container} from "./styles";
+import { Link } from "react-router-dom";
 
 export function Login() {
     return (
@@ -14,7 +15,7 @@ export function Login() {
             <p>Senha</p>
             <Input/>
             <Button> Entrar</Button>
-            <p>Cadastre-se</p>
+            <Button url={"/Register"}>Cadastre-se</Button>
             <Navbar/>
         </Container>
     )
