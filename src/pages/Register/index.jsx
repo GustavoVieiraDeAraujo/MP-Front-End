@@ -34,10 +34,10 @@ export function Register() {
                 is_student: 'student' === formValues.radioUser,
                 is_admin: false
             })
-            if (response.data){
                 navigate('/')
                 alert("Sucesso")
-            }
+            }else{
+                    alert("Preencha todos os campos")
         }
     }
 
@@ -48,7 +48,7 @@ export function Register() {
                 <Input type='text' placeholder='Nome do usuário' onChangeFunction={setName}></Input>
                 <Input type='text' placeholder='E-mail do usuário' onChangeFunction={setEmail}></Input>
                 <Input type='text' placeholder='Matrícula do usuário' onChangeFunction={setEnrollment}></Input>
-                <Input type='text' placeholder='Senha' onChangeFunction={setPassword} ></Input>
+                <Input type='password' placeholder='Senha' onChangeFunction={setPassword} ></Input>
                 <div className="checkbox__container">
                     <div className="checkboxAndUser">
                     <Input 
