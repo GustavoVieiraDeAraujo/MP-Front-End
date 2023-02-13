@@ -14,7 +14,6 @@ export function Login() {
 
     return (
         <Container>
-            <Navbar/>
             <h1>Login</h1>
             <p>Email</p>
             <Input onChangeFunction={setEmail} placeholder="Email"/>
@@ -22,7 +21,6 @@ export function Login() {
             <Input onChangeFunction={setPassword} placeholder="Password" type="password"/>
             <Button onClick={() => {return login(email, password)}}>Entrar</Button>
             <Button url="/Register">Cadastre-se</Button>
-            <Navbar/>
         </Container>
     )
 }

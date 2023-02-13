@@ -15,6 +15,10 @@ nav{
     justify-content: space-around;
     align-items: center;
     height: 100%;
+
+    .logout_icon{
+        cursor: pointer;
+    }
 }
 ul{
     list-style-type: none;
@@ -34,4 +38,5 @@ a {
     color: var(--clr-primary);
     cursor: pointer;
 } 
+
 `
