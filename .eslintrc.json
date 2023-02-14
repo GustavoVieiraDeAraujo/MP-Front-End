@@ -20,6 +20,11 @@
     "rules": {
         "import/prefer-default-export": "off",
         "arrow-body-style": ["error", "always"],
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "no-alert": "off",
+        "react/prop-types":"off",
+        "camelcase":"off",
+        "import/extensions":"off",
+        "react/no-array-index-key":"off"
     }
 }

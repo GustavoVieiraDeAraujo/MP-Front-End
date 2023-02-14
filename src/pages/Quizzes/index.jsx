@@ -1,8 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import {Navbar} from "../../components/Navbar";
-import QuestionsContainer from "../../components/QuestionsComponents/QuestionsContainer";
 import QuizContainer from "../../components/QuizComponents/QuizContainer";
-import TeamsContainer from "../../components/TeamsComponents/TeamContainer";
 import { useUserContext } from "../../context/useUserContext";
 import { api } from "../../services/api";
 import { Container} from "./styles";
@@ -14,7 +12,7 @@ export function Quiz() {
 
     useEffect(()=>{
         api.get('/quiz/index')
-        .then(response => setQuiz(response.data))
+        .then(response => {return setQuiz(response.data)})
     },[])
 
     return (

@@ -42,6 +42,7 @@ const logout = async () => {
     if(window.confirm("Deseja sair de sua conta?")){
         setUser({});
         Cookie.remove('mp.user');
+        navigate('/')
     }
 }
 return (

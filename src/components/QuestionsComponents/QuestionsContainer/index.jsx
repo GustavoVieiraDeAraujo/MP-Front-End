@@ -19,7 +19,7 @@ function QuestionContainer({user,questions,}) {
                         <QuestionCard key={index} title={item.title} subject={item.subject} OnClick/>
                         <div className='admin__buttons'>
                                 <RoundButton  className='round__button' url={`/QuestionUpdate/${item.id}`}><FiEdit /></RoundButton>
-                                <RoundButton className='round__button' type="button" onClick={() => {deletePartner(item.id)}}><HiTrash /></RoundButton>
+                                <RoundButton className='round__button' type="button" ><HiTrash /></RoundButton>
                         </div>
                     </div>
                 )})}  

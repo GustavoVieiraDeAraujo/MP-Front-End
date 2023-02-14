@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import {Navbar} from "../../components/Navbar";
 import { Container} from "./styles";
 import { useUserContext } from "../../context/useUserContext";
 

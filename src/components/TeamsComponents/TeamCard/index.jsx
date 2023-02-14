@@ -1,3 +1,4 @@
+import React from "react";
 import {Container} from './styles.jsx'
 
 function TeamCard({name}) {

@@ -22,7 +22,6 @@ export function Register() {
 
     const userCreate = async (e) => {
         e.preventDefault()
-        console.log(name , email , enrollment, password , formValues.radioUser === 'teacher', formValues.radioUser === 'student', false)
         if (name && email && enrollment && password && formValues.radioUser) {
             await api.post("user/create",{
                 "user": {
