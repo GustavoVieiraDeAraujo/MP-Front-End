@@ -52,7 +52,7 @@ export function QuestionUpdate() {
             <p>Resposta</p>
             <Input  onChangeFunction={setAnswer}/>
             <Button onClick={questionUpdate}>Atualizar Questão</Button> 
-            <Button>Voltar</Button>
+            <Button url="/questoes">Voltar</Button>
         </Container>
     )
 }
