@@ -11,7 +11,7 @@ function QuestionContainer({user,questions,}) {
     const refresh = () => {return window.location.reload(true)}
 
     const deleteMember = (id) => {
-        const confirma = window.confirm("Deseja mesmo excluir esse membro?")
+        const confirma = window.confirm("Deseja mesmo excluir essa questão?")
         if (confirma) {
             api.delete(`question/delete/${id}`)
         .then(() => {
