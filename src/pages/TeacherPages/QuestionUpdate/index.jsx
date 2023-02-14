@@ -1,52 +1,58 @@
-// import React from "react";
-// import Button from "../../../components/Button";
-// import Input from "../../../components/Input";
-// import { Navbar } from "../../../components/Navbar";
-// import { Container} from "./styles";
-// import { useNavigate, useParams } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-// import { useState } from 'react'
+import React,{ useState } from "react";
+import { useNavigate, useParams } from 'react-router-dom';
+import Button from "../../../components/Button";
+import Input from "../../../components/Input";
+import { Navbar } from "../../../components/Navbar";
+import { Container} from "./styles";
+import { api } from "../../../services/api";
+import { useUserContext } from "../../../context/useUserContext";
 
-// export function QuestionCreate() {
-//     let navigate = useNavigate()
-//     const {id} = useParams()
-//     const {user} = useContext()
-//     const [title, setTitle] = useState('')
-//     const [description, setDescription] = useState('')
-//     const [answer, setAnswer] = useState('')
-//     const user_id = user.id
+export function QuestionUpdate() {
+    const navigate = useNavigate()
+    const {id} = useParams()
+    const {user} = useUserContext()
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [subject, setSubject] = useState('')
+    const [answer, setAnswer] = useState('')
+    const user_id = user.id
 
-//     const questionUpdate = async (e) => {
-//         e.preventDefault()
-//         if(title && description && answer){
-//             try {
-//             const response = await api.patch(`question/update/${id}`, {
-//                 title,
-//                 description,
-//                 answer,
-//                 user_id
-//             })
-//             }
-//             catch (err) {
-//                 toast.error(err.response.data? err.response.data : 'Algum erro ocorreu. Por favor, tente novamente.')
-//             }
-//         }
-//             else{
-//                 toast.warn("prencher todos os campos")
-//         }
-//     }
-//     return (
-//         <Container>
-//             <Navbar/>
-//             <h1>Criar Questão</h1>
-//             <p>Título</p>
-//             <Input setValue={setTitle}/>
-//             <p>Descrição</p>
-//             <Input setValue={setDescription}/>
-//             <p>Resposta</p>
-//             <Input setValue={setAnswer}/>
-//             <Button onClick={questionUpdate}>Criar Questão</Button> 
-//             <Button>Voltar</Button>
-//         </Container>
-//     )
-// }
+    const questionUpdate = async (e) => {
+        e.preventDefault()
+        if(title && description && subject && answer){
+            try {
+            await api.patch(`question/update/${id}`, {
+                "question": {
+                    title,
+                    description,
+                    subject,
+                    answer,
+                    user_id
+        }})
+        navigate("/questoes")
+    }
+            catch (err) {
+                window.alert(err.response.data? err.response.data : 'Algum erro ocorreu. Por favor, tente novamente.')
+            }
+        }
+            else{
+                window.alert("prencher todos os campos")
+        }
+    }
+    return (
+        <Container>
+            <Navbar/>
+            <h1>Atualizar Questão</h1>
+            <p>Título</p>
+            <Input  onChangeFunction={setTitle}/>
+            <p>Descrição</p>
+            <Input  onChangeFunction={setDescription}/>
+            <p>Assunto</p>
+            <Input  onChangeFunction={setSubject}/>
+            <p>Resposta</p>
+            <Input  onChangeFunction={setAnswer}/>
+            <Button onClick={questionUpdate}>Atualizar Questão</Button> 
+            <Button>Voltar</Button>
+        </Container>
+    )
+}

@@ -5,8 +5,21 @@ import Button from '../../Button/index.jsx'
 import RoundButton from '../../RoundButton/index.jsx'
 import QuestionCard from '../QuestionCard/index.jsx'
 import {Container} from './styles.jsx'
+import { api } from "../../../services/api.js";
 
 function QuestionContainer({user,questions,}) {
+    const refresh = () => {return window.location.reload(true)}
+
+    const deleteMember = (id) => {
+        const confirma = window.confirm("Deseja mesmo excluir esse membro?")
+        if (confirma) {
+            api.delete(`question/delete/${id}`)
+        .then(() => {
+            window.alert(`Questão deletado com sucesso!`)
+            refresh()
+        })
+        }
+        }
     
     return (
             <Container user={user.is_teacher}>
@@ -19,7 +32,7 @@ function QuestionContainer({user,questions,}) {
                         <QuestionCard key={index} title={item.title} subject={item.subject} OnClick/>
                         <div className='admin__buttons'>
                                 <RoundButton  className='round__button' url={`/QuestionUpdate/${item.id}`}><FiEdit /></RoundButton>
-                                <RoundButton className='round__button' type="button" ><HiTrash /></RoundButton>
+                                <RoundButton className='round__button' type="button" onClick={() => {deleteMember(item.id)}}><HiTrash /></RoundButton>
                         </div>
                     </div>
                 )})}  
