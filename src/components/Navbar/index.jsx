@@ -23,8 +23,11 @@ export function Navbar() {
                     <li className="navbar__item">
                     <b><a href="/minhaconta" className="navbar__link">MINHA CONTA</a></b>
                     </li>
+                    <li className="navbar__item">
+                    { Object.keys(user).length ? <div onClick={() => {return logout()}}><AiOutlineLogin className='logout_icon'/></div>:<></>}
+                    </li>
                 </ul>
-                { Object.keys(user).length ? <div onClick={() => {return logout()}}><AiOutlineLogin className='logout_icon'/></div>:<></>}
+                
             </nav>
         </Container>
     )

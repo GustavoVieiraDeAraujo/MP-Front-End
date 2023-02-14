@@ -45,10 +45,10 @@ export function QuestionCreate() {
             <h1>Criar Questão</h1>
             <p>Título</p>
             <Input onChangeFunction={setTitle}/>
-            <p>Assunto</p>
-            <Input onChangeFunction={setSubject}/>
             <p>Descrição</p>
             <Input onChangeFunction={setDescription}/>
+            <p>Assunto</p>
+            <Input onChangeFunction={setSubject}/>
             <p>Resposta</p>
             <Input onChangeFunction={setAnswer}/>
             <Button onClick={questionCreate}>Criar Questão</Button> 
