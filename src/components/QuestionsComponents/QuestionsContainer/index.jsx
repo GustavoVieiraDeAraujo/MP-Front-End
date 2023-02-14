@@ -15,7 +15,7 @@ function QuestionContainer({user,questions,}) {
         if (confirma) {
             api.delete(`question/delete/${id}`)
         .then(() => {
-            window.alert(`Questão deletado com sucesso!`)
+            window.alert(`Questão deletada com sucesso!`)
             refresh()
         })
         }
