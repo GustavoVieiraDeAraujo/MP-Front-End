@@ -7,4 +7,13 @@ export const Container = styled.div`
     flex-direction:column;
     width: 100%;
     text-align: center;
+    .send__button{
+        display:${(props)=> {return props.clicked? 'none' : 'flex'}};
+    }
+    .gabarito{
+        display: flex;
+        p{
+            margin: 10px;
+        }
+    }
 ` 

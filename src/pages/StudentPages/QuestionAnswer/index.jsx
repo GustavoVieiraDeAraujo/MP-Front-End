@@ -11,12 +11,12 @@ import { Container} from "./styles";
 
 export function QuestionAnswer() {
     const {user} = useUserContext()
-    const [statistic, setStatistic] = useState('')
     const [question, setQuestion] = useState([])
     const [result, setResult] = useState('')
-    const [questions_answered, setQuestionsAnswered] = useState(0)
-    const [right_answers, setRightAnswers] = useState(0)
-    const [wrong_answers, setWrongAnswers] = useState(0)
+    const [questionsAnswered, setQuestionsAnswered] = useState(0)
+    const [rightAnswers, setRightAnswers] = useState(0)
+    const [wrongAnswers, setWrongAnswers] = useState(0)
+    const [clicked,setClicked] = useState(false)
     const params = useParams();
     
     useEffect(()=>{
@@ -28,22 +28,30 @@ export function QuestionAnswer() {
     
     useEffect(()=>{
         api.get(`statistic/show/${user.id}`)
-        .then((response) => {setStatistic(response.data)})
+        .then((response) => {
+            setQuestionsAnswered(response.data.questions_answered)
+            setRightAnswers(response.data.right_answers)
+            setWrongAnswers(response.data.wrong_answers)
+        })
     },[user])
+
 
     const sendAnswers = async (e) => {
         e.preventDefault()
         
         if(result){
-            setQuestionsAnswered(statistic.questions_answered + 1)
-            if (result === question.answer){
-                setRightAnswers(statistic.right_answers+1)
-                window.alert('acertou!')
+            setClicked(true)
+            const questions_answered = questionsAnswered + 1
+            let right_answers = rightAnswers
+            let wrong_answers= wrongAnswers
+            if(result === question.answer){
+                right_answers +=1 
             } else {
-                setWrongAnswers(statistic.wrong_answers+1)
-                window.alert('errou')
+                wrong_answers +=1 
             }
-                window.alert(`${questions_answered},${right_answers},${wrong_answers}`)
+            setQuestionsAnswered(questions_answered+1)
+
+            window.alert("Resposta enviada")
             try {
             await api.patch(`statistic/update/${user.id}`, {
                 "statistic": {
@@ -51,7 +59,6 @@ export function QuestionAnswer() {
                     right_answers,
                     wrong_answers
                 }})
-            
     }
             catch (err) {
                 window.alert(err.response.data? err.response.data : 'Algum erro ocorreu. Por favor, tente novamente.')
@@ -62,7 +69,7 @@ export function QuestionAnswer() {
         }
     }
     return (
-        <Container>
+        <Container clicked={clicked}>
             <Navbar/>
             <h1>Responder Questão</h1>
             <p>{question.subject}</p>
@@ -70,7 +77,16 @@ export function QuestionAnswer() {
             <h2>{question.description}</h2>
             <p>Resposta</p>
             <Input onChangeFunction={setResult}/>
-            <Button onClick={sendAnswers}>Enviar Resposta</Button> 
+            <Button onClick={sendAnswers} className="send__button">Enviar Resposta</Button> 
+            {clicked?
+            <div className="gabarito">
+                
+                <b><p>Gabarito:</p></b>
+                <p>{question.answer}</p>
+                
+            </div>
+            :
+            <></>}
             <Button url="/questoes">Voltar</Button>
         
         </Container>
