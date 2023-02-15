@@ -4,13 +4,13 @@ import {Container} from './styles.jsx';
 import Button from "../../Button/index.jsx";
 
 function TeamsContainer({user,teams}) {
-    
+
     return (
             <Container user={user.is_teacher}>
                 <div className='teams__container'>
                 {teams.map((item,index)=>{return (
                     <div className='teams__content'>
-                        <TeamCard key={index} name={item.name}  />
+                        <TeamCard key={index} name={item.name} url={`/SpecificTeam/${item.id}`} />
                     </div> 
                 )})}
                 </div>

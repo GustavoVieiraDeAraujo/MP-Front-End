@@ -11,6 +11,7 @@ import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
 import { MyAccount } from "./pages/MyAccount";
 import { UserUpdate } from "./pages/UserUpdate";
 import { TeamCreate } from "./pages/TeacherPages/TeamCreate";
+import { SpecificTeam } from "./pages/SpecificTeam";
 
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
       <UserProvider>
         <Routes>
             <Route path="/" element={<Login/>}/>
+            <Route path="/SpecificTeam" element={<SpecificTeam/>}/>
             <Route path="/questoes" element={<Questions/>}/>
             <Route path="/Register" element={<Register/>}/>
             <Route path="/turmas" element={<Teams/>}/>
