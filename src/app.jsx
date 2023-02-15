@@ -8,6 +8,7 @@ import { Register } from "./pages/Register"
 import { Teams } from "./pages/Teams";
 import { Quiz } from "./pages/Quizzes";
 import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
+import { QuestionAnswer } from "./pages/StudentPages/QuestionAnswer";
 
 
 export function App() {
@@ -28,8 +29,8 @@ export function App() {
             <Route path="/QuizAnswer" element={<Login/>}/>
             <Route path="/StudentAdd" element={<Login/>}/>
             <Route path="/QuestionCreate" element={<QuestionCreate/>}/>
-            <Route path="/QuestionAnswer/:id" element={<Login/>}/>
             <Route path="/QuestionUpdate/:id" element={<QuestionUpdate/>}/>
+            <Route path="/QuestionAnswer/:id" element={<QuestionAnswer/>}/>
             <Route path="/QuestionAdd/:id" element={<Login/>}/>
         </Routes>
       </UserProvider>

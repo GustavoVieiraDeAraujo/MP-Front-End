@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { createContext, useContext, useState, useEffect } from "react";
 import Cookie from "js-cookie"
 import { useNavigate } from "react-router-dom";
@@ -20,7 +21,7 @@ function UserProvider({children}) {
                 api.defaults.headers.common["X-User-Email"] = response.data.email
                 Cookie.set('mp.user', JSON.stringify(response.data), {expires: 1})
                 window.alert("Usuário logado com sucesso!")
-                navigate("/questoes")
+                navigate("/minhaconta")
                 
             }
         } catch(err) {
