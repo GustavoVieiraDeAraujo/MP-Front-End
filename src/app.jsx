@@ -9,6 +9,9 @@ import { Teams } from "./pages/Teams";
 import { Quiz } from "./pages/Quizzes";
 import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
 import { QuestionAnswer } from "./pages/StudentPages/QuestionAnswer";
+import { MyAccount } from "./pages/MyAccount";
+import { UserUpdate } from "./pages/UserUpdate";
+
 
 
 export function App() {
@@ -21,7 +24,7 @@ export function App() {
             <Route path="/Register" element={<Register/>}/>
             <Route path="/turmas" element={<Teams/>}/>
             <Route path="/provas" element={<Quiz/>}/>
-            <Route path="/minhaconta" element={<Login/>}/>
+            <Route path="/MyAccount" element={<MyAccount/>}/>
             <Route path="/TeamCreate" element={<Login/>}/>
             <Route path="/TeamUpdate" element={<Login/>}/>
             <Route path="/QuizCreate" element={<Login/>}/>
@@ -32,6 +35,7 @@ export function App() {
             <Route path="/QuestionUpdate/:id" element={<QuestionUpdate/>}/>
             <Route path="/QuestionAnswer/:id" element={<QuestionAnswer/>}/>
             <Route path="/QuestionAdd/:id" element={<Login/>}/>
+            <Route path="/UserUpdate/:id" element={<UserUpdate/>}/>
         </Routes>
       </UserProvider>
     </BrowserRouter>

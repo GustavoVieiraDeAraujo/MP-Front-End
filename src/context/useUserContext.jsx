@@ -21,7 +21,8 @@ function UserProvider({children}) {
                 api.defaults.headers.common["X-User-Email"] = response.data.email
                 Cookie.set('mp.user', JSON.stringify(response.data), {expires: 1})
                 window.alert("Usuário logado com sucesso!")
-                navigate("/minhaconta")
+                navigate("/MyAccount")
+
                 
             }
         } catch(err) {

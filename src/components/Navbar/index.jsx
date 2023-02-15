@@ -23,7 +23,7 @@ export function Navbar() {
                     <b><a href="/questoes" className="navbar__link">QUESTÕES</a></b>
                     </li>
                     <li className="navbar__item">
-                    <b><a href="/minhaconta" className="navbar__link">MINHA CONTA</a></b>
+                    <b><a href="/myaccount" className="navbar__link">MINHA CONTA</a></b>
                     </li>
                     <li className="navbar__item">
                     { Object.keys(user).length ? <div onClick={() => {return logout()}}><AiOutlineLogin className='logout_icon'/></div>:<></>}
