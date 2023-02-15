@@ -25,6 +25,7 @@
         "react/prop-types":"off",
         "camelcase":"off",
         "import/extensions":"off",
-        "react/no-array-index-key":"off"
+        "react/no-array-index-key":"off",
+        "react/jsx-no-useless-fragment":"off"
     }
 }

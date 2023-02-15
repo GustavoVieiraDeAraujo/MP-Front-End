@@ -29,7 +29,7 @@ function QuestionContainer({user,questions,}) {
                 <div className='questions__container'>
                 {questions.filter(((item) => {return item.owner.id === user.id})).map((item, index) =>{return (
                     <div className='question__content'>
-                        <QuestionCard key={index} title={item.title} subject={item.subject} OnClick/>
+                        <QuestionCard key={index} title={item.title} subject={item.subject} />
                         <div className='admin__buttons'>
                                 <RoundButton  className='round__button' url={`/QuestionUpdate/${item.id}`}><FiEdit /></RoundButton>
                                 <RoundButton className='round__button' type="button" onClick={() => {deleteMember(item.id)}}><HiTrash /></RoundButton>
@@ -43,7 +43,7 @@ function QuestionContainer({user,questions,}) {
                 <div className='questions__container'>
                     {questions.map((item,index)=>{return (
                         <div className='question__content'>
-                            <QuestionCard key={index} title={item.title} subject={item.subject} />
+                            <QuestionCard key={index} title={item.title} subject={item.subject} url={`/QuestionAnswer/${item.id}`} />
                         </div> 
                     )})}
                 </div>

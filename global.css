@@ -8,7 +8,7 @@
     font-family: 'Inter', sans-serif;
     margin:0;
     padding:5vh;
-    color: var(--clr-primary);
+    color: var(--clr-text);
   }
   h1{
     font-size: var(--page-title-size);

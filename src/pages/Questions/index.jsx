@@ -9,7 +9,8 @@ import { Container} from "./styles";
 export function Questions() {
     const [questions, setQuestions] = useState([])
     const {user} = useUserContext()
-
+    console.log(user)
+    
     useEffect(()=>{
         api.get('/question/index')
         .then(response => {return setQuestions(response.data)})
