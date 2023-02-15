@@ -18,18 +18,18 @@ export function QuestionAnswer() {
     const [right_answers, setRightAnswers] = useState(0)
     const [wrong_answers, setWrongAnswers] = useState(0)
     const params = useParams();
-
+    
     useEffect(()=>{
         api.get(`question/show/${params.id}`)
         .then(response => {return setQuestion(response.data)})
 
-    },[])
+    },[params])
 
     
     useEffect(()=>{
         api.get(`statistic/show/${user.id}`)
-        .then(response => {setStatistic(response.data)})
-    },[])
+        .then((response) => {setStatistic(response.data)})
+    },[user])
 
     const sendAnswers = async (e) => {
         e.preventDefault()
