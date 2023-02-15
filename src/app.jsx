@@ -9,6 +9,7 @@ import { Teams } from "./pages/Teams";
 import { Quiz } from "./pages/Quizzes";
 import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
 import { MyAccount } from "./pages/MyAccount";
+import { UserUpdate } from "./pages/UserUpdate";
 
 
 export function App() {
@@ -32,6 +33,7 @@ export function App() {
             <Route path="/QuestionAnswer/:id" element={<Login/>}/>
             <Route path="/QuestionUpdate/:id" element={<QuestionUpdate/>}/>
             <Route path="/QuestionAdd/:id" element={<Login/>}/>
+            <Route path="/UserUpdate/:id" element={<UserUpdate/>}/>
         </Routes>
       </UserProvider>
     </BrowserRouter>
