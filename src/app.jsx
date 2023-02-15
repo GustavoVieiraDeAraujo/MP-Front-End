@@ -8,6 +8,7 @@ import { Register } from "./pages/Register"
 import { Teams } from "./pages/Teams";
 import { Quiz } from "./pages/Quizzes";
 import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
+import { MyAccount } from "./pages/MyAccount";
 
 
 export function App() {
@@ -20,7 +21,7 @@ export function App() {
             <Route path="/Register" element={<Register/>}/>
             <Route path="/turmas" element={<Teams/>}/>
             <Route path="/provas" element={<Quiz/>}/>
-            <Route path="/minhaconta" element={<Login/>}/>
+            <Route path="/MyAccount" element={<MyAccount/>}/>
             <Route path="/TeamCreate" element={<Login/>}/>
             <Route path="/TeamUpdate" element={<Login/>}/>
             <Route path="/QuizCreate" element={<Login/>}/>
