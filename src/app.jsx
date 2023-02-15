@@ -10,6 +10,7 @@ import { Quiz } from "./pages/Quizzes";
 import { QuestionUpdate } from "./pages/TeacherPages/QuestionUpdate";
 import { MyAccount } from "./pages/MyAccount";
 import { UserUpdate } from "./pages/UserUpdate";
+import { TeamCreate } from "./pages/TeacherPages/TeamCreate";
 
 
 export function App() {
@@ -23,7 +24,7 @@ export function App() {
             <Route path="/turmas" element={<Teams/>}/>
             <Route path="/provas" element={<Quiz/>}/>
             <Route path="/MyAccount" element={<MyAccount/>}/>
-            <Route path="/TeamCreate" element={<Login/>}/>
+            <Route path="/TeamCreate" element={<TeamCreate/>}/>
             <Route path="/TeamUpdate" element={<Login/>}/>
             <Route path="/QuizCreate" element={<Login/>}/>
             <Route path="/QuizUpdate" element={<Login/>}/>

@@ -1,6 +1,7 @@
 import React from "react";
 import TeamCard from "../TeamCard/index.jsx";
-import {Container} from './styles.jsx'
+import {Container} from './styles.jsx';
+import Button from "../../Button/index.jsx";
 
 function TeamsContainer({user,teams}) {
     
@@ -13,6 +14,12 @@ function TeamsContainer({user,teams}) {
                     </div> 
                 )})}
                 </div>
+                {user.is_teacher
+                ?
+                    <Button url="/TeamCreate">Criar Turma</Button>
+                :
+                    <h4></h4>
+                }
             </Container>
         )
     
