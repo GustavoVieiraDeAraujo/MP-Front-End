@@ -21,4 +21,9 @@ h1{
     font-size: var(--page-title-size);
 }
 
+.userDeleteButton{
+    background-color: red;
+    color: white;
+}
+
 `

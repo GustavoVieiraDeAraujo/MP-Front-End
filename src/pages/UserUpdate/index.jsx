@@ -39,6 +39,17 @@ const userUpdate = async(e) => {
     }
 }
 
+    const deleteUser = (id) => {
+        let confirma = window.confirm("Deseja mesmo excluir essa conta?")
+        if (confirma) {
+            api.delete(`user/delete/${id}`)
+        .then((response) =>{
+            alert("Conta deletada com suceosso")
+            navigate("/")
+        })
+        }
+    }
+
 useEffect ( () => {
     api.get(`user/show/${user.id}`).then((response) => {
         setName(response.data.name)
@@ -59,6 +70,8 @@ useEffect ( () => {
                 <Input type="text" placeholder="Matrícula"
                 onChangeFunction={setEnrollment} value={enrollment}></Input>
                 <Button onClick={userUpdate}>Editar</Button>
+                <Button className="userDeleteButton"
+                onClick={() => {deleteUser(user.id)}}>Deletar conta</Button>
             </form>
         </Container>
     )
